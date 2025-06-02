@@ -265,7 +265,7 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
               transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
-              className="text-white/80 text-lg max-w-xl mb-12 tracking-wide leading-relaxed font-light"
+              className="text-white/80 text-lg max-w-xl mb-8 tracking-wide leading-relaxed font-light"
             >
               A distinguished multi-sector family office with strategic
               investments across{" "}
@@ -276,6 +276,24 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
               , and{" "}
               <span className="text-[#c9a96e] font-normal">Technology</span>.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
+              transition={{ duration: 1, delay: 1.0, ease: "easeOut" }}
+              className="max-w-xl mb-12"
+            >
+              <div className="pl-4 border-l-2 border-[#c9a96e]/40">
+                <p className="text-white/90 text-lg italic font-light tracking-wide leading-relaxed">
+                  "At Paradigm, we believe true wealth is defined by what
+                  endures. Our mission is to build and protect capital that
+                  transcends markets and moments."
+                </p>
+                <p className="text-[#c9a96e] text-sm mt-2 tracking-wider">
+                  — CEO, Paradigm Group
+                </p>
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
