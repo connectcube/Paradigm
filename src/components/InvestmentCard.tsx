@@ -34,7 +34,7 @@ const InvestmentCard = ({
       whileHover={{ y: -5 }}
       className="bg-background"
     >
-      <Card className="overflow-hidden border border-neutral-200 h-full transition-all duration-300 hover:shadow-xl">
+      <Card className="overflow-hidden border border-[#222222] bg-[#111111] text-white h-full transition-all duration-300 hover:shadow-xl">
         <div className="relative h-64 overflow-hidden">
           <img
             src={imageUrl}
@@ -44,7 +44,7 @@ const InvestmentCard = ({
           <div className="absolute top-4 left-4">
             <Badge
               variant="secondary"
-              className="bg-black/70 text-white hover:bg-black/80"
+              className="bg-[#c9a96e]/80 text-black hover:bg-[#c9a96e]"
             >
               {sector}
             </Badge>
@@ -54,25 +54,25 @@ const InvestmentCard = ({
         <CardContent className="p-6 space-y-4">
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
 
-          <p className="text-sm text-muted-foreground line-clamp-2">
-            {description}
-          </p>
+          <p className="text-sm text-gray-300 line-clamp-2">{description}</p>
 
           <div className="grid grid-cols-2 gap-2 pt-2">
             <div className="space-y-1">
-              <p className="text-xs text-muted-foreground">Target Return</p>
-              <p className="text-sm font-medium">{returnRate}</p>
+              <p className="text-xs text-gray-400">Target Return</p>
+              <p className="text-sm font-medium text-[#c9a96e]">{returnRate}</p>
             </div>
             <div className="space-y-1">
-              <p className="text-xs text-muted-foreground">Investment Period</p>
-              <p className="text-sm font-medium">{investmentPeriod}</p>
+              <p className="text-xs text-gray-400">Investment Period</p>
+              <p className="text-sm font-medium text-white">
+                {investmentPeriod}
+              </p>
             </div>
           </div>
 
           <div className="pt-2">
             <Button
               variant="ghost"
-              className="w-full justify-between hover:bg-neutral-100 group"
+              className="w-full justify-between hover:bg-[#1a1a1a] text-[#c9a96e] group"
               onClick={onClick}
             >
               <span>View Details</span>

@@ -78,9 +78,6 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
           ))}
         </div>
 
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0 bg-radial-gradient from-[#c9a96e]/5 via-transparent to-transparent opacity-70"></div>
-
         {/* Golden accent gradients */}
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-[#c9a96e]/10 to-transparent"></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#c9a96e]/10 to-transparent"></div>
@@ -205,7 +202,7 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
 
       {/* Hero Content */}
       <motion.div
-        className="relative z-10 h-[calc(100vh-100px)] flex flex-col justify-center px-4 md:px-16 lg:px-24 overflow-visible"
+        className="relative z-10 h-[calc(100vh-100px)] flex flex-col justify-center px-4 md:px-16 lg:px-24"
         style={{ opacity }}
       >
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -216,15 +213,6 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="mb-2 relative"
             >
-              <div className="inline-block relative mb-6">
-                <div className="flex items-center">
-                  <div className="h-[1px] w-12 bg-[#c9a96e]/70 mr-4"></div>
-                  <div className="text-[#c9a96e]/80 text-xs tracking-[0.3em]">
-                    ESTABLISHED 2005
-                  </div>
-                </div>
-              </div>
-
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white tracking-wider mb-6 w-full">
                 <div className="overflow-hidden w-full">
                   <motion.div
@@ -362,7 +350,7 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
                   ease: "easeOut",
                 }}
               >
-                <div className="bg-[#0a0a0a]/80 backdrop-blur-sm border border-[#c9a96e]/30 px-4 py-2 rounded-sm">
+                <div className="bg-[#0a0a0a] border border-[#c9a96e]/30 px-4 py-2 rounded-sm">
                   <p className="text-[#c9a96e] text-sm">{sector.name}</p>
                 </div>
               </motion.div>
@@ -370,7 +358,7 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
 
             {/* Center emblem */}
             <motion.div
-              className="relative z-10 h-24 w-24 bg-[#0a0a0a]/80 backdrop-blur-sm border border-[#c9a96e]/50 rounded-full flex items-center justify-center"
+              className="relative z-10 h-24 w-24 bg-[#0a0a0a] border border-[#c9a96e]/50 rounded-full flex items-center justify-center"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0 }}
               transition={{ duration: 1, delay: 1, ease: "easeOut" }}

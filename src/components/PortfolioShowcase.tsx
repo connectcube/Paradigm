@@ -41,7 +41,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
   ];
 
   return (
-    <section className="py-24 px-6 bg-white" id="portfolio">
+    <section className="py-24 px-6 bg-[#0a0a0a] text-white" id="portfolio">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,11 +50,11 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
             Our Investment Portfolio
           </h2>
-          <div className="w-24 h-0.5 bg-amber-500 mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <div className="w-24 h-0.5 bg-[#c9a96e] mx-auto mb-6"></div>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Discover our diverse range of premium investments across multiple
             sectors, each carefully selected for exceptional quality and growth
             potential.
@@ -74,7 +74,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
                 value={
                   sector.toLowerCase() === "all" ? "all" : sector.toLowerCase()
                 }
-                className="px-6 py-3 text-sm font-medium transition-all border-b-2 border-transparent data-[state=active]:border-amber-500 data-[state=active]:text-gray-900 text-gray-500 hover:text-gray-900"
+                className="px-6 py-3 text-sm font-medium transition-all border-b-2 border-transparent data-[state=active]:border-[#c9a96e] data-[state=active]:text-white text-gray-400 hover:text-white"
               >
                 {sector}
               </TabsTrigger>
@@ -102,13 +102,13 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
 
           {filteredInvestments.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-gray-500 mb-6">
+              <p className="text-gray-400 mb-6">
                 No investments found in this category.
               </p>
               <Button
                 variant="outline"
                 onClick={() => setActiveTab("all")}
-                className="border-amber-500 text-amber-500 hover:bg-amber-50"
+                className="border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e]/10"
               >
                 View All Investments
               </Button>
@@ -119,7 +119,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
         <div className="text-center mt-16">
           <Button
             variant="outline"
-            className="border-amber-500 text-amber-500 hover:bg-amber-50 px-8 py-6 text-sm tracking-wider"
+            className="border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e]/10 px-8 py-6 text-sm tracking-wider"
           >
             EXPLORE MORE OPPORTUNITIES
           </Button>
