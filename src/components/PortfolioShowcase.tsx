@@ -74,7 +74,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({
                 value={
                   sector.toLowerCase() === "all" ? "all" : sector.toLowerCase()
                 }
-                className="px-6 py-3 text-sm font-medium transition-all border-b-2 border-transparent data-[state=active]:border-[#c9a96e] data-[state=active]:text-white text-gray-400 hover:text-white"
+                className="px-6 py-3 text-sm font-medium transition-all border-b-2 border-transparent data-[state=active]:border-[#c9a96e] data-[state=active]:text-[#c9a96e] text-gray-400 hover:text-white"
               >
                 {sector}
               </TabsTrigger>
