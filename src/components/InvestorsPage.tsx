@@ -302,7 +302,7 @@ const InvestorsPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                       <div className="p-6 bg-[#1a1a1a] rounded-lg">
                         <Shield className="h-10 w-10 text-[#c9a96e] mb-4" />
-                        <h3 className="text-lg font-medium mb-2 text-white">
+                        <h3 className="text-lg font-medium mb-2">
                           Accredited Investors
                         </h3>
                         <p className="text-sm text-gray-400">
@@ -312,7 +312,7 @@ const InvestorsPage = () => {
                       </div>
                       <div className="p-6 bg-[#1a1a1a] rounded-lg">
                         <Lock className="h-10 w-10 text-[#c9a96e] mb-4" />
-                        <h3 className="text-lg font-medium mb-2 text-white">
+                        <h3 className="text-lg font-medium mb-2">
                           Institutional Investors
                         </h3>
                         <p className="text-sm text-gray-400">
@@ -322,7 +322,7 @@ const InvestorsPage = () => {
                       </div>
                       <div className="p-6 bg-[#1a1a1a] rounded-lg">
                         <FileText className="h-10 w-10 text-[#c9a96e] mb-4" />
-                        <h3 className="text-lg font-medium mb-2 text-white">
+                        <h3 className="text-lg font-medium mb-2">
                           Strategic Partners
                         </h3>
                         <p className="text-sm text-gray-400">
