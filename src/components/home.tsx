@@ -14,7 +14,7 @@ const HomePage = () => {
       <HeroSection />
 
       {/* About Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#0a0a0a]">
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-[#0a0a0a]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,23 +70,11 @@ const HomePage = () => {
       </section>
 
       {/* Sector Highlight */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#0c0c0c]">
+      <section
+        id="sectors"
+        className="py-16 px-6 md:px-12 lg:px-24 bg-[#0c0c0c]"
+      >
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wider text-center">
-              INVESTMENT <span className="text-[#c9a96e]">SECTORS</span>
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center">
-              Our diverse portfolio spans multiple sectors, each carefully
-              selected for growth potential and alignment with our values.
-            </p>
-          </motion.div>
           {/* Ensure SectorHighlight is rendered with default props */}
           <SectorHighlight
             sectors={undefined}
@@ -96,7 +84,10 @@ const HomePage = () => {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#0a0a0a]">
+      <section
+        id="portfolio"
+        className="py-16 px-6 md:px-12 lg:px-24 bg-[#0a0a0a]"
+      >
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -118,7 +109,10 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#0c0c0c]">
+      <section
+        id="contact"
+        className="py-16 px-6 md:px-12 lg:px-24 bg-[#0c0c0c]"
+      >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

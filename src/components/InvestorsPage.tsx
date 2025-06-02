@@ -1,19 +1,106 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ChevronRight, FileText, Lock, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const InvestorsPage = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
+      {/* Navigation */}
+      <nav className="relative z-20 px-8 md:px-16 py-8 flex justify-between items-center bg-[#030303]">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: isLoaded ? 1 : 0, x: isLoaded ? 0 : -20 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex items-center"
+        >
+          <Link to="/" className="flex items-center">
+            <div className="h-12 w-12 mr-4 relative group">
+              <motion.div
+                className="absolute inset-0 border border-[#c9a96e] rotate-45"
+                animate={{ rotate: [45, 135, 225, 315, 405] }}
+                transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+              ></motion.div>
+              <motion.div
+                className="absolute inset-2 border border-[#c9a96e]/50 rotate-45"
+                animate={{ rotate: [45, -45, -135, -225, -315, -405] }}
+                transition={{ duration: 25, ease: "linear", repeat: Infinity }}
+              ></motion.div>
+              <div className="absolute inset-4 bg-[#c9a96e]/20 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+            <div className="text-white text-2xl font-light tracking-[0.2em] relative">
+              <span className="relative inline-block">
+                PARADIGM
+                <motion.span
+                  className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white/30"
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1.5, delay: 1, ease: "easeInOut" }}
+                />
+              </span>{" "}
+              <span className="font-medium text-[#c9a96e] relative inline-block">
+                GROUP
+                <motion.span
+                  className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#c9a96e]/50"
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1.5, delay: 1.3, ease: "easeInOut" }}
+                />
+              </span>
+            </div>
+          </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isLoaded ? 1 : 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="hidden md:flex space-x-10 text-white/90 text-sm tracking-[0.15em]"
+        >
+          {[
+            { label: "HOME", href: "/" },
+            { label: "PORTFOLIO", href: "/#portfolio" },
+            { label: "SECTORS", href: "/#sectors" },
+            { label: "INVESTORS", href: "/investors" },
+            { label: "CONTACT", href: "/contact" },
+          ].map((item, index) => (
+            <motion.div
+              key={item.href}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -10 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.4 + index * 0.1,
+                ease: "easeOut",
+              }}
+              className="relative group py-2"
+            >
+              <Link
+                to={item.href}
+                className="text-white/80 hover:text-[#c9a96e] transition-colors duration-300"
+              >
+                {item.label}
+              </Link>
+              <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#c9a96e] group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-2 right-0 w-0 h-[1px] bg-[#c9a96e]/30 group-hover:w-full transition-all duration-700"></span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden bg-[#030303]">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#030303] opacity-40 mix-blend-overlay"></div>
           <img
-            src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1800&q=80"
+            src="https://images.unsplash.com/photo-1620778340859-be5f1a4d6e1b?w=1800&q=80"
             alt="Investors Background"
             className="w-full h-full object-cover opacity-60"
           />
@@ -309,7 +396,9 @@ const InvestorsPage = () => {
                             <FileText className="h-6 w-6 text-[#c9a96e]" />
                           </div>
                           <div>
-                            <h4 className="font-medium">{doc.title}</h4>
+                            <h4 className="font-medium text-white">
+                              {doc.title}
+                            </h4>
                             <p className="text-sm text-gray-400">
                               {doc.type} · {doc.size}
                             </p>
